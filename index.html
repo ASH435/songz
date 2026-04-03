@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Playlist Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar with Tracklist -->
+        <aside class="sidebar">
+            <div class="header">
+                <h2>Playlist Tracks</h2>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search" placeholder="Search songs...">
+                </div>
+            </div>
+            <div class="tracklist" id="tracklist">
+                <!-- Track items will be dynamically inserted here -->
+            </div>
+        </aside>
+
+        <!-- Main Player Section -->
+        <main class="player-main">
+            <div class="now-playing-card">
+                <div class="track-info">
+                    <h1 id="current-title">Select a Song</h1>
+                    <p id="current-artist">From the Playlist</p>
+                </div>
+                <div class="spotify-embed">
+                    <iframe id="spotify-iframe" 
+                        src="https://open.spotify.com/embed/playlist/3QllcmYPOoH2MqwusMEHNn?utm_source=generator&theme=0" 
+                        width="100%" 
+                        height="352" 
+                        frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
