@@ -16,11 +16,25 @@ const tracks = [
     { title: "back to friends", artist: "sombr" },
     { title: "LET THE WORLD BURN", artist: "Chris Grey" },
     { title: "Snowman", artist: "Sia" },
+    // Trending English Additions
     { title: "360", artist: "Charli XCX" },
     { title: "Ordinary", artist: "Alex Warren" },
     { title: "Beautiful Things", artist: "Benson Boone" },
     { title: "Number One Girl", artist: "ROSÉ" },
-    { title: "Dancing With Your Ghost", artist: "Sasha Alex Sloan" }
+    { title: "Dancing With Your Ghost", artist: "Sasha Alex Sloan" },
+    { title: "APT.", artist: "ROSÉ & Bruno Mars" },
+    { title: "Birds of a Feather", artist: "Billie Eilish" },
+    { title: "Espresso", artist: "Sabrina Carpenter" },
+    { title: "Please Please Please", artist: "Sabrina Carpenter" },
+    { title: "Good Luck, Babe!", artist: "Chappell Roan" },
+    { title: "Lose Control", artist: "Teddy Swims" },
+    { title: "Too Sweet", artist: "Hozier" },
+    { title: "Stick Season", artist: "Noah Kahan" },
+    { title: "End of Beginning", artist: "Djo" },
+    { title: "Murder on the Dancefloor", artist: "Sophie Ellis-Bextor" },
+    { title: "Cruel Summer", artist: "Taylor Swift" },
+    { title: "Greedy", artist: "Tate McRae" },
+    { title: "Water", artist: "Tyla" }
 ];
 
 const tracklistElement = document.getElementById('tracklist');
