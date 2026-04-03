@@ -1,35 +1,19 @@
-const tracks = [
-    { title: "From The Start", artist: "Laufey" },
-    { title: "Haseen", artist: "Talwiinder, NDS, Rippy Grewal" },
-    { title: "blue", artist: "yung kai" },
-    { title: "Samjho Na", artist: "Aditya Rikhari" },
-    { title: "Sahiba", artist: "Aditya Rikhari" },
-    { title: "Aaoge Tum Kabhi", artist: "The Local Train" },
-    { title: "Die With A Smile", artist: "Lady Gaga, Bruno Mars" },
-    { title: "Line Without a Hook", artist: "Ricky Montgomery" },
-    { title: "Past Lives", artist: "sapientdream, Slushii" },
-    { title: "Dandelions", artist: "Ruth B." },
-    { title: "Jo Tum Mere Ho", artist: "Anuv Jain" },
-    { title: "Lover Girl", artist: "Laufey" },
-    { title: "Sailor Song", artist: "Gigi Perez" },
-    { title: "I Think They Call This Love", artist: "Elliot James Reay" },
-    { title: "Trouble", artist: "Frank" },
-    { title: "Perfect", artist: "Ed Sheeran" },
-    { title: "Stephanie", artist: "Nafeesisboujee" },
-    { title: "I Wanna Be Yours", artist: "Arctic Monkeys" },
-    { title: "Night Changes", artist: "One Direction" },
-    { title: "back to friends", artist: "sombr" },
-    { title: "bargad", artist: "sufr, Arpit Bala, toorjo dey" },
-    { title: "LET THE WORLD BURN", artist: "Chris Grey" },
-    { title: "Unakkul Naane", artist: "Harris Jayaraj, Rohini, Pritt, dilushselva" },
-    { title: "Jhol (Acoustic)", artist: "Maanu, Annural Khalid, Abdullah Siddiqui" },
-    { title: "Finding Her", artist: "Kushagra, Bharath, Saaheal" },
-    { title: "Dekha Hi Nahi", artist: "Osho Jain" },
-    { title: "Paaro", artist: "Aditya Rikhari" },
-    { title: "Snowman", artist: "Sia" },
-    { title: "Rakhlo Tum Chupaake", artist: "Arpit Bala, Adil" },
-    { title: "Dooron Dooron (Unplugged)", artist: "Paresh Pahuja, Shiv Tandan" }
-];
+let tracks = [];
+
+async function loadTracks() {
+    try {
+        const response = await fetch('tracks.json');
+        tracks = await response.json();
+        renderTracks();
+        // Select first track
+        if (tracks.length > 0) {
+            const firstItem = document.querySelector('.track-item');
+            if (firstItem) selectTrack(tracks[0], firstItem);
+        }
+    } catch (error) {
+        console.error("Error loading tracks:", error);
+    }
+}
 
 const tracklistElement = document.getElementById('tracklist');
 const searchInput = document.getElementById('search');
@@ -59,11 +43,8 @@ function renderTracks(filter = "") {
 }
 
 function selectTrack(track, element) {
-    // Update UI
     document.querySelectorAll('.track-item').forEach(el => el.classList.remove('active'));
     element.classList.add('active');
-
-    // Update Now Playing
     currentTitle.textContent = track.title;
     currentArtist.textContent = track.artist;
 }
@@ -72,12 +53,5 @@ searchInput.addEventListener('input', (e) => {
     renderTracks(e.target.value);
 });
 
-// Initial Render
-renderTracks();
-// Select the first track by default
-if (tracks.length > 0) {
-    setTimeout(() => {
-        const firstItem = tracklistElement.querySelector('.track-item');
-        if (firstItem) selectTrack(tracks[0], firstItem);
-    }, 100);
-}
+// Initial Load
+loadTracks();
