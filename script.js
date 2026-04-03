@@ -1,15 +1,10 @@
 const tracks = [
     { title: "From The Start", artist: "Laufey" },
-    { title: "Haseen", artist: "Talwiinder, NDS, Rippy Grewal" },
     { title: "blue", artist: "yung kai" },
-    { title: "Samjho Na", artist: "Aditya Rikhari" },
-    { title: "Sahiba", artist: "Aditya Rikhari" },
-    { title: "Aaoge Tum Kabhi", artist: "The Local Train" },
     { title: "Die With A Smile", artist: "Lady Gaga, Bruno Mars" },
     { title: "Line Without a Hook", artist: "Ricky Montgomery" },
     { title: "Past Lives", artist: "sapientdream, Slushii" },
     { title: "Dandelions", artist: "Ruth B." },
-    { title: "Jo Tum Mere Ho", artist: "Anuv Jain" },
     { title: "Lover Girl", artist: "Laufey" },
     { title: "Sailor Song", artist: "Gigi Perez" },
     { title: "I Think They Call This Love", artist: "Elliot James Reay" },
@@ -19,16 +14,13 @@ const tracks = [
     { title: "I Wanna Be Yours", artist: "Arctic Monkeys" },
     { title: "Night Changes", artist: "One Direction" },
     { title: "back to friends", artist: "sombr" },
-    { title: "bargad", artist: "sufr, Arpit Bala, toorjo dey" },
     { title: "LET THE WORLD BURN", artist: "Chris Grey" },
-    { title: "Unakkul Naane", artist: "Harris Jayaraj, Rohini, Pritt, dilushselva" },
-    { title: "Jhol (Acoustic)", artist: "Maanu, Annural Khalid, Abdullah Siddiqui" },
-    { title: "Finding Her", artist: "Kushagra, Bharath, Saaheal" },
-    { title: "Dekha Hi Nahi", artist: "Osho Jain" },
-    { title: "Paaro", artist: "Aditya Rikhari" },
     { title: "Snowman", artist: "Sia" },
-    { title: "Rakhlo Tum Chupaake", artist: "Arpit Bala, Adil" },
-    { title: "Dooron Dooron (Unplugged)", artist: "Paresh Pahuja, Shiv Tandan" }
+    { title: "360", artist: "Charli XCX" },
+    { title: "Ordinary", artist: "Alex Warren" },
+    { title: "Beautiful Things", artist: "Benson Boone" },
+    { title: "Number One Girl", artist: "ROSÉ" },
+    { title: "Dancing With Your Ghost", artist: "Sasha Alex Sloan" }
 ];
 
 const tracklistElement = document.getElementById('tracklist');
@@ -66,9 +58,6 @@ function selectTrack(track, element) {
     // Update Now Playing
     currentTitle.textContent = track.title;
     currentArtist.textContent = track.artist;
-
-    // Optional: You could update the Spotify iframe URL to play the specific track 
-    // if you had individual track IDs. For now, we keep the playlist embed.
 }
 
 searchInput.addEventListener('input', (e) => {
