@@ -13,7 +13,7 @@ export function Spotifyembed({ trackId, className }: SpotifyembedProps) {
     : `https://open.spotify.com/embed/playlist/3QllcmYPOoH2MqwusMEHNn?utm_source=generator&theme=0`;
 
   return (
-    <div className={cn('w-full h-[352px] bg-black/50 flex items-center justify-center', className)}>
+    <div className={cn('w-full h-[352px] bg-black flex items-center justify-center', className)}>
       <iframe 
         src={embedUrl}
         width="100%" 
@@ -22,7 +22,7 @@ export function Spotifyembed({ trackId, className }: SpotifyembedProps) {
         allowFullScreen 
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
         loading="lazy"
-        className="w-full h-full border-none"
+        className="w-full h-full border-none opacity-100 animate-fade-in"
       />
     </div>
   );

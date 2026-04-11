@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { Track } from '@/types/track';
-import { Music } from 'lucide-react';
+import { Play } from 'lucide-react';
 
 interface TracklistProps {
   tracks: Track[];
@@ -13,22 +13,32 @@ interface TracklistProps {
 
 export function Tracklist({ tracks, onSelect, currentTrackId, className }: TracklistProps) {
   return (
-    <div className={cn('space-y-1', className)}>
+    <div className={cn('space-y-1 pb-4', className)}>
       {tracks.map((track) => (
         <div 
           key={track.id} 
           onClick={() => onSelect(track)}
           className={cn(
-            'flex items-center p-2.5 rounded-lg cursor-pointer transition-all hover:bg-white/5 group',
-            currentTrackId === track.id ? 'bg-[#1db954]/15 border border-[#1db954]/30' : ''
+            'flex items-center p-2 rounded-md cursor-pointer transition-all hover:bg-white/10 group',
+            currentTrackId === track.id ? 'bg-white/10' : ''
           )}
         >
-          <div className="w-10 h-10 bg-white/5 rounded flex items-center justify-center mr-3.5 group-hover:bg-white/10 transition-colors">
-            <Music className="w-4 h-4" />
+          <div className="w-12 h-12 bg-spotify-grey rounded shadow-lg flex items-center justify-center mr-4 relative group-hover:bg-opacity-50 transition-all overflow-hidden shrink-0">
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+               <Play className="w-6 h-6 fill-white text-white" />
+            </div>
+            <span className="text-white font-bold opacity-30 text-xs">IMG</span>
           </div>
           <div className="overflow-hidden">
-            <div className="text-[0.95rem] font-semibold truncate">{track.title}</div>
-            <div className="text-[0.8rem] text-[#b3b3b3]">{track.artist}</div>
+            <div className={cn(
+              "text-[0.95rem] font-medium truncate",
+              currentTrackId === track.id ? "text-spotify-green" : "text-white"
+            )}>
+              {track.title}
+            </div>
+            <div className="text-[0.8rem] text-spotify-lightGrey group-hover:text-white transition-colors truncate">
+              {track.artist}
+            </div>
           </div>
         </div>
       ))}

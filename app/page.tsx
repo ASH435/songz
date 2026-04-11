@@ -30,14 +30,14 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#121212] flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#1db954]"></div>
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-spotify-green"></div>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col md:flex-row h-screen bg-[#121212] text-white overflow-hidden bg-[radial-gradient(circle_at_50%_50%,#1a1a1a_0%,#000000_100%)]">
+    <div className="flex flex-col md:flex-row h-screen bg-black text-white overflow-hidden p-0 font-sans">
       <Sidebar 
         tracks={tracks} 
         onSelect={setCurrentTrack} 
