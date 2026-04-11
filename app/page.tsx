@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchTracks() {
       try {
-        const response = await fetch('/tracks.json');
+        const response = await fetch('/songz/tracks.json');
         const data = await response.json();
         setTracks(data);
         if (data.length > 0) {
